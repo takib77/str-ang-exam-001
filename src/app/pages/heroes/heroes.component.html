@@ -1,6 +1,9 @@
 <div class="row">
     <div class="col-8 offset-2">
         <h1 class="text-center my-5">Table of our awesome Heroes</h1>
+        <div class="col-6 offset-3">
+            <input (keyup)="onSearchPhrase($event)" class="form-control my-5" type="text" placeholder="Search hero...">
+        </div>
         <table class="table table-striped">
             <thead>
                 <tr>
@@ -11,7 +14,7 @@
                 </tr>
             </thead>
             <tbody>
-                <tr *ngFor="let hero of heroList">
+                <tr *ngFor="let hero of heroList | search: phrase: 'name' ">
                     <td class="text-center">{{hero.id}}</td>
                     <td class="text-center">{{hero.name}}</td>
                     <td class="text-center">{{hero.superPower}}</td>
