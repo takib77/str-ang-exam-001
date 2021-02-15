@@ -1,1 +1,23 @@
-<p>Hello Heroes</p>
+<div class="row">
+    <div class="col-8 offset-2">
+        <h1 class="text-center my-5">Table of our awesome Heroes</h1>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th class="bg-dark text-center text-white">#</th>
+                    <th class="bg-dark text-center text-white">NAME</th>
+                    <th class="bg-dark text-center text-white">SUPERPOWER</th>
+                    <th class="bg-dark text-center text-white">ADDRESS</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let hero of heroList">
+                    <td class="text-center">{{hero.id}}</td>
+                    <td class="text-center">{{hero.name}}</td>
+                    <td class="text-center">{{hero.superPower}}</td>
+                    <td class="text-center">{{hero.address}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
