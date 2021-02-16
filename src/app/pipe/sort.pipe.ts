@@ -5,8 +5,14 @@ import { Pipe, PipeTransform } from '@angular/core';
 })
 export class SortPipe implements PipeTransform {
 
-  transform(value: unknown, ...args: unknown[]): unknown {
-    return null;
+  transform(value: any[], key: string, direction: number): any[] {
+    if (!value || !key || !Array.isArray(value)) {
+      return value;
+    }
+
+    return value.sort((a, b) => {
+      return `${a[(key)].toLowerCase()}`.localeCompare(`${b[key].toLowerCase()}`) * direction;
+    });
   }
 
 }

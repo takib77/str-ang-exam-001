@@ -7,14 +7,17 @@
         <table class="table table-striped">
             <thead>
                 <tr>
-                    <th class="bg-dark text-center text-white">#</th>
-                    <th class="bg-dark text-center text-white">NAME</th>
-                    <th class="bg-dark text-center text-white">SUPERPOWER</th>
-                    <th class="bg-dark text-center text-white">ADDRESS</th>
+                    <th id="columnName" (click)="onColumnSelect('id')" class="bg-dark text-center text-white">#</th>
+                    <th id="columnName" (click)="onColumnSelect('name')" class="bg-dark text-center text-white">NAME
+                    </th>
+                    <th id="columnName" (click)="onColumnSelect('superPower')" class="bg-dark text-center text-white">
+                        SUPERPOWER</th>
+                    <th id="columnName" (click)="onColumnSelect('address')" class="bg-dark text-center text-white">
+                        ADDRESS</th>
                 </tr>
             </thead>
             <tbody>
-                <tr *ngFor="let hero of heroList | search: phrase: 'name' ">
+                <tr *ngFor="let hero of heroList | search: phrase: 'name' | sort: columnKey:direction">
                     <td class="text-center">{{hero.id}}</td>
                     <td class="text-center">{{hero.name}}</td>
                     <td class="text-center">{{hero.superPower}}</td>
